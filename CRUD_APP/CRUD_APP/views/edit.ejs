@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT PAGE</title>
+    <style>
+        input[type=text]{
+            width:20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type=number]{
+            width:20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type=time]{
+            width:20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type=tel]{
+            width:20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        input[type=email]{
+            width:20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+       
+        select{
+            width:20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        body{
+          background-image: url('https://img.freepik.com/premium-vector/london-vector-with-tourists-travel-theme-cartoon-people-city_507816-540.jpg?w=2000');
+          background-size:cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <center>
+        <pre>
+    <h1><%= title %></h1>
+    <form action="/update/" id ="studentdetailform" method="post" role="form" >
+        <input type="hidden" name="id" value="<%= touristsites._id %>">
+        <label for="id">SiteID</label>
+        <input type="number" name="sid" placeholder="id" value="<%= touristsites.siteID %>" required>
+
+        <label for="sname">SiteName:-</label>
+        <input type="text" name="sname" placeholder="sitename" value="<%= touristsites.siteName %>" required>
+
+        <label for="stype">SiteType:-</label>
+        <select name="sitetype">
+            <option value="MONUMENT" <% if(touristsites.siteType=="MONUMENT"){ %> selected <% } %>>Monument</option>
+            <option value="MUSEUM" <% if(touristsites.siteType=="MUSEUM"){ %> selected <% } %>>Museum</option>
+            <option value="HOLYPLACE" <% if(touristsites.siteType=="HOLYPLACE"){ %> selected <% } %>>Holy Place</option>
+            <option value="ARTGALLERY" <% if(touristsites.siteType=="ARTGALLERY"){ %> selected <% } %>>Art Gallery</option>
+        </select>
+
+        <label for="sdiscrip">SiteDescription:-</label>
+        <input type="text" name="sdiscription" placeholder="describe" value="<%= touristsites.siteDescription %>" required>
+
+        <label for="saddress">country:</label>
+        <input type="text" name="country" placeholder="address" value="<%= touristsites.siteAddress.country %>" required>
+        <label for="saddress">country:</label>
+        <input type="text" name="state" placeholder="address" value="<%= touristsites.siteAddress.state %>" required>
+        <label for="saddress">country:</label>
+        <input type="text" name="city" placeholder="address" value="<%= touristsites.siteAddress.city %>" required>
+
+        <label for="sopen">SiteOpenTime:-</label>
+        <input type="time" name="sot" value="<%= touristsites.siteOpenTime %>"  required>
+
+        <label for="sclose">SiteCloseTime:-</label>
+        <input type="time" name="sct" value="<%= touristsites.siteCloseTime %>" required>
+
+        <label for="tprice">adult</label>
+        <input type="number" name="adult" placeholder="price" value="<%= touristsites.ticketPrice.adult %>" required>
+        <label for="tprice">child</label>
+        <input type="number" name="child" placeholder="price" value="<%= touristsites.ticketPrice.child %>" required>
+        <label for="tprice">adult</label>
+        <input type="number" name="foreginer" placeholder="price" value="<%= touristsites.ticketPrice.foreginer %>" required>
+
+        <label for="savailable">Availability:-</label>
+        <select name="available">
+            <option value="yes" <% if(touristsites.Availability=="yes"){ %> selected <% } %>>YES</option>
+            <option value="no" <% if(touristsites.Availability=="no"){ %> selected <% } %>>NO</option>
+            
+        </select>
+
+        <label for="phone">ContactPhone:-</label>
+        <input type="tel" name="phone" placeholder="phno" value="<%= touristsites.contactDetails.contactNumber %>" required>
+
+        <label for="email">EmailId:-</label>
+        <input type="email" name="email" placeholder="email" value="<%= touristsites.contactDetails.contactEmail %>" required>
+        <label for="season">season</label>
+        <input type="text" name="season" placeholder="season" value="<%= touristsites.season %>" required>
+        <label for="image">image</label>
+        <input type="text" name="image" placeholder="image" value="<%= touristsites.image%>" required>
+
+
+        
+
+        <input type="submit"  name="submir"  placeholder="Filter">
+       </form>
+        </pre>
+    </center>
+</body>
+</html>

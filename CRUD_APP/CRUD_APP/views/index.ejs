@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body{
+      background-image: url('https://img.freepik.com/premium-vector/world-landmarks-silhouette-travel-tourism-background_185417-160.jpg?w=2000');
+      background-size:cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    </style>
+    
+       
+</head>
+<body>
+  <% if(success !=""){ %>
+  <div class="alert alert-success">
+    <strong>Success!</strong><%= success %>
+  </div>
+  <% } %>
+  <div>
+    <ul style="color:rgb(54, 232, 10); float:inline-start;">
+        <button class="button"><a href="/input">ADMIN</a>
+    </ul>
+  </div>
+  <h1 style="color:rgb(13, 10, 10)">FIND ME?</h1>
+  <form action="/search/" id ="touristform" method="post" role="form">
+      <label for="name">SITE NAME</label>
+      <input type="text" name="sitename" placeholder="name">
+      <label for="idno">SITE ID</label>
+      <input type="number" name="siteid" placeholder="id">
+      <input type="submit"  name="submir"  placeholder="Filter">
+     </form>
+  <h1 style="color:rgb(199, 18, 24)"><%= title %></h1>
+  <table id="example" class="table table-striped table-bordered" style="width:100%">
+      <thead>
+          <tr>
+              <th>SITE ID</th>
+              <th>SITE NAME</th>
+              <th>SITE TYPE</th>
+              <th>SITE DESCRIPTION</th>
+              <th>SITE ADDRESS</th>
+              <th>SITE OPEN-TIME</th>
+              <th>SITE CLOSE-TIME</th>
+              <th>TICKET PRICE</th>
+              <th>ACCOMIDATION</th>
+              <th>CONTACT NUMBER</th>
+              <th>EMAIL ID</th>
+              <th>ACTION</th>
+          </tr>
+      </thead>
+      <%if(tdata.length>0){%>
+        <% tdata.forEach(function(row){%>
+      <tbody>
+          <tr>
+              <td><%=row.siteID%></td>
+              <td><%=row.siteName%></td>
+              <td><%=row.siteType%></td>
+              <td><%=row.siteDescription%></td>
+              <td><%=row.siteAddress%></td>
+              <td><%=row.siteOpenTime%></td>
+              <td><%=row.siteCloseTime%></td>
+              <td><%=row.ticketPrice%></td>
+              <td><%=row.Availability%></td>
+              <td><%=row.contactNumber%></td>
+              <td><%=row.contactEmail%></td>
+              <!-- <td><a class="btn btn-primary btn-xs" href="/edit/<%= row._id %>"><i class="fa fa-edit"></i></a> -->
+              <td><a class="btn btn-outline-danger" href="/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-outline-danger" href="/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
+            </td>
+              
+          </tr>
+      </tbody>
+      <%})}else{%>
+        <tr>
+        <td colspan="12">RESULT NOT FOUND</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr> 
+        <%}%>  
+  </table>
+
+  <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script src="//cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#example').DataTable();
+  });
+  </script>
+</body>
+</html>

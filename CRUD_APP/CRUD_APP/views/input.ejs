@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EntryPage</title>
+    <style>
+        .container{
+            height:fit-content;
+            max-width: 900px;
+            position:center;
+            width:600%;
+            background:#D0E6F0;
+            padding:25px 30px;
+            border-radius:10px;
+        }
+        .container .title{
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+        }
+      
+        input[type=text]{
+            width:400px;
+            padding: 15px 20px;
+            margin: 8px 0;
+            box-sizing:content-box;
+            outline-style:groove;
+            outline-width: medium;
+            background-color: rgb(190, 222, 230);
+        }
+        input[type=number]{
+            width:400px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing:content-box;
+            outline-style:groove;
+            outline-width: medium;
+            background-color: rgb(190, 222, 230);
+        }
+        input[type=time]{
+            width:400px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing:content-box;
+            outline-style:groove;
+            outline-width: medium;
+            background-color: rgb(190, 222, 230);
+        }
+        input[type=tel]{
+            width:400px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing:content-box;
+            outline-style:groove;
+            outline-width: medium;
+            background-color: rgb(190, 222, 230);
+        }
+        input[type=email]{
+            width:400px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: content-box;
+            outline-style:groove;
+            outline-width: medium;
+            background-color: rgb(190, 222, 230);
+        }
+       
+        select{
+            width:400px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: content-box;
+            outline-style:groove;
+            outline-width: medium;
+            background-color: rgb(190, 222, 230);
+        }
+        body{
+            /* background-image: url('https://img.freepik.com/premium-vector/travel-world-road-trip-big-set-famous-landmarks-world-time-travel-tourism-summer-holiday-different-types-journey-flat-illustration_126895-9.jpg?w=2000'); */ 
+            /* background-image: url('https://static.vecteezy.com/system/resources/previews/006/574/647/non_2x/travel-and-tourism-background-vector.jpg'); */
+             background-image: url('https://img.freepik.com/free-vector/realistic-travel-background-with-elements_52683-77784.jpg?w=2000');
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .submit-container{
+            position: relative;
+            bottom: 50%;
+            border: 1px solid black;
+            border-radius: 2px;
+        }
+        .submit{
+            padding: 10px;
+            width: 10rem;
+            
+            background-color: #ffff;
+            color: black;
+        }
+        .submit:hover{
+            color: white;
+            background-color: #000000;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: ease-in 5s;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <pre>
+     <h1><% title %></h1>
+    <div class="container">
+    <form action="/input" style="font-style: italic;"id ="studentdetailform" method="post" role="form"  >
+        <label for="id" style="font-size:20px;">SITE ID</label>
+        <input type="number" name="sid" placeholder="id" required>
+
+        <label for="sname" style="font-size:20px;">SITE NAME</label>
+        <input type="text" name="sname" placeholder="sitename" required>
+        <label for="image" style="font-size:20px;">image</label>
+        <input type="text" name="image" placeholder="url">
+
+
+        <label for="stype" style="font-size:20px;">SITETYPE</label>
+        <select name="sitetype">
+            <option value="MONUMENT">Monument</option>
+            <option value="MUSEUM">Museum</option>
+            <option value="HOLYPLACE">Holy Place</option>
+            <option value="ARTGALLERY">Art Gallery</option>
+        </select>
+
+        <label for="sdis" style="font-size:20px;">SITE DESCRIPTION</label>
+        <input type="text" name="sdiscription" placeholder="describe"  required>
+
+        <label for="country" style="font-size:20px;">country</label>
+        <input type="text" name="country" placeholder="country" required>
+        <label for="state" style="font-size:20px;">state</label>
+        <input type="text" name="state" placeholder="state" required>
+        <label for="city" style="font-size:20px;">city</label>
+        <input type="text" name="city" placeholder="city" required>
+
+        <label for="sopen" style="font-size:20px;">SITE OPEN TIME</label>
+        <input type="time" name="sot"  required>
+
+        <label for="sclose" style="font-size:20px;">SITE CLOSE TIME</label>
+        <input type="time" name="sct"  required >
+
+        <label for="adult" style="font-size:20px;">adult</label>
+        <input type="number" name="adult" placeholder="price" required>
+        <label for="child" style="font-size:20px;">child</label>
+        <input type="number" name="child" placeholder="price" required>
+        <label for="foreginer" style="font-size:20px;">foreginer</label>
+        <input type="number" name="foreginer" placeholder="price" required>
+
+        <label for="savailable" style="font-size:20px;">ACCOMIDATION AVAILABILITY</label>
+        <select name="available">
+            <option value="yes">YES</option>
+            <option value="no">NO</option>
+            
+        </select>
+
+        <label for="phone" style="font-size:20px;">CONTACT NUMBER</label>
+        <input type="number" name="phone" placeholder="phno" required>
+
+        <label for="email" style="font-size:20px;">EMAIL ID</label>
+        <input type="text" name="email" placeholder="email" required>
+        <label for="season" style="font-size:20px;">BEST VISIT SEASON</label>
+        <select name="season">
+            <option value="SUMMER">SUMMER</option>
+            <option value="WINTER">WINTER</option>
+            <option value="RAINY">RAINY</option>
+            <option value="SPRING">SPRING</option>
+        </select>
+        
+        
+
+        
+        <input type="submit"  name="submir" placeholder="Filter">
+    </div>
+      </form>
+        </pre>
+    
+    </center>
+</body>
+</html>

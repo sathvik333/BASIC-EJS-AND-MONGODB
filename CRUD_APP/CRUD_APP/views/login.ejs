@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="Utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>DWARR</title>
+     <style>
+        body{
+            /* background-image:url('https://hirockyengineering.com/wp-content/uploads/2020/11/old-1130730_1920-min.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+            /* background:linear-gradient(90deg,#583fb38a,#031c32); */
+            font-family:"Open Sans",sans-serif;
+            align-items: center;
+            background-color:#E7D2CC;
+        }
+        form{
+            text-align:center;
+            background:#B9B7BD;
+            max-width:360px;
+            margin:0 auto 200px;
+            padding:70px;
+            z-index:1;
+            position:right;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.92), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	        display: flex;
+	        align-items: center;
+	        justify-content: center;
+	        flex-direction: column;
+        }
+        .login{
+            border: #010509;
+            width:190px;
+            font-size: 20px;
+            position:absolute;
+            transform:translate(480px,190%);
+            transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+            height:90px;
+            display:contents;
+            padding: 8% 0 0;
+             margin: auto;
+             left: 0;
+	        width: 50%;
+	        z-index: 2;
+        }
+        .login-header,
+        .login p{
+            margin-top: 23px;
+            margin-bottom:12px;
+            border-style: initial;
+            border-bottom-right-radius: 12en;
+            
+        }
+        .input-container{
+            /* opacity:1;
+            transition:1s; */
+            z-index: 1;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        img{
+            width:100px;
+            border-radius:50%;
+            padding:12px;
+            align-self:auto;
+            box-shadow:10px 4px 10px #06000b8a;
+        }
+
+        .login-header{
+        background:rgb(4, 6, 8);
+        padding:20px;
+        font-size:20px;
+        font-weight:normal;
+        text-align:center;
+        padding-top:32%;
+        left: 0;
+	        width: 50%;
+	        z-index: 2;
+        }
+    
+        /* .login-container{
+            background:rgb(3, 10, 18);
+            padding:100px 300px;
+        } */
+        .login p{
+            padding:12px;
+        }
+        .login input{
+            box-sizing: border-box;
+            display:block;
+            border: #422442;
+            width:300px;
+            height:fit-content;
+            border-width:1en;
+            border-style:initial;
+            padding:12px;
+            outline:6%;
+            font-family: inherit;
+            font-size:1.45em;
+        }
+        .login input[type="username"],
+        .login input[type="password"]{
+            
+            
+            border-bottom:4px solid #0000003b;
+            font-family: "Roboto", sans-serif;
+            outline: 0;
+            background: #d0bcce;
+            width: 100%;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing:unset;
+            font-size: 14px;
+            font-style: italic;
+            
+        }
+        .login input[type="username"]:focus,
+        .login input[type="password"]:focus{
+            border-color:rgb(29, 36, 50);
+        }
+        .login input[type="login"]:focus{
+            background:rgb(175, 222, 214);
+            width:min-content;
+            text-decoration-color: #000000;
+
+            margin:30px;
+            border-bottom:2px;
+            overflow:visible;
+            border-radius:12px;
+        }
+        /* .hide-form{
+            
+            padding-top:9px;
+        } */
+        /* .hide-login{
+            border-radius: 20px;
+	        border: 1px solid #0b0b0b;
+	        background-color: #150502;
+	        color: #180202;
+	        font-size: 12px;
+	        font-weight: bold;
+	        padding: 12px 45px;
+	        letter-spacing: 1px;
+	        text-transform: uppercase;
+	         transition: transform 80ms ease-in;
+        } */
+        /* .form .message a {
+            color: #000000;
+            text-decoration: none;
+        } */
+        /* .form .message {
+           margin: 15px 0 0;
+           color: #ff0000;
+           font-size: 12px;
+        } */
+        /* .centrelogin{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 50%;
+        } */
+        .login{
+            /* position: relative; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .login-container{
+            position: relative;
+            bottom: 50%;
+            border: 1px solid black;
+            border-radius: 2px;
+        }
+        .login_btn{
+            padding: 10px;
+            width: 10rem;
+            
+            background-color: #ffff;
+            color: black;
+        }
+        .login_btn:hover{
+            color: white;
+            background-color: #000000;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: ease-in 5s;
+        }
+
+    </style> 
+</head>
+
+<body>
+    <div class="centrelogin">
+        <div class="login">
+        <form class="login-container" action="login" method="post" autocomplete="off">
+            <img src="https://cdn-icons-gif.flaticon.com/8121/8121295.gif" alt=""/>
+            <div class="input-container hide-section">
+                <p><input type="username" placeholder="USERNAME" name="email" /></p>
+                <p><input type="password" placeholder="PASSWORD" name="password"/></p>
+                <p><button class="login_btn">LOG-IN</button></p>
+                <p class="message">Not registered? <a href="register">Create an account</a></p>
+
+            </div>
+        </form>
+        </div>
+    </div>
+
+    <!-- <script src="js/animate.js"></script> -->
+</body>
+<!-- </html> -->

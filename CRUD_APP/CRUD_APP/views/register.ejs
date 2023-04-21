@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registration form|DWARR</title>
+        <meta name="viewport" content="width=device-width",intial-scale=1.0">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+
+        }
+        body{
+            display:flex;
+            height:100vh;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(190deg,#d8efef,#3CACAE);
+            padding:10px;
+        }
+        .container{
+            height: 800px;
+            max-width: 900px;
+            position:center;
+            width:600%;
+            background:#fff;
+            padding:25px 30px;
+            border-radius:10px;
+        }
+        .container .title{
+            font-size: 25px;
+            font-weight: 500;
+            position: relative;
+        }
+        .container .title::before{
+            content: '';
+            position:absolute;
+            left:0;
+            bottom: 0;
+            height: 3px;
+            width: 30px;
+            background: #9b59b6;
+
+            
+        }
+        .childcontainer{
+            display: flex;
+            flex-direction: column;
+        }
+        .inform{
+            display: flex;
+            flex-direction: column;
+            line-height: 5vh;
+        }
+        form>input{
+            height: 3vh;
+            border: 2.5px solid black;
+            border-radius: 2px;
+        }
+        .submitbtn{
+            position: relative;
+            top: 2.5vh;
+            width: 2rem;
+            padding: .4rem;
+            border-radius: 3px solid black;
+        }
+        form>select{
+            height: 3vh;
+            border: 2.5px solid black;
+            border-radius: 2px;
+        }
+    </style>
+
+    </head>
+    <body>
+        <!-- <center>
+            <pre> -->
+        <div class="container">
+        <div class="childcontainer">
+          <div class="title">REGISTRATION</div>
+          <form action="/input" class="inform" style="font-style: italic;"id ="Registeration Form" method="post" role="form" >
+            <label for="fname" style="font-size:20px;">FirstName</label>
+            <input type="text" name="lname" placeholder="firstname" required>
+            <label for="lname" style="font-size:20px;">Lastname</label>
+            <input type="text" name="lname" placeholder="lastname" required>
+            <label for="gender" style="font-size:20px;">Gender</label>
+            <select name="gender">
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+                <option value="OTHER">OTHER</option>
+                
+            </select>
+            <label for="cnum" style="font-size:20px;">Phone Number</label>
+            <input type="number" name="contactNumber" placeholder="contactNumber" required>
+            <label for="hnum" style="font-size:20px;">Contact Number</label>
+            <input type="number" name="hunm" placeholder="contactnumber">
+            
+            <label for="email" style="font-size:20px;">EMAIL ID</label>
+            <input type="text" name="email" placeholder="email" required>
+            <label for="acou" style="font-size:20px;">Country</label>
+            <input type="text" name="cou"  required>
+            <label for="astat" style="font-size:20px;">State</label>
+            <input type="text" name="state"  required>
+            <label for="tprice" style="font-size:20px;">City</label>
+            <input type="text" name="city" placeholder="city" required>
+            <input class="submitbtn" type="submit"  name="submir"  placeholder="Filter" style="width:100px; box-sizing: content-box; height: max-content;">
+        </div>
+        </div>
+          </form>
+            <!-- </pre>
+        
+        </center> -->
+    </body>
+</html>
